@@ -1,0 +1,138 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "board",
+              "elicitationRequired": false,
+              "type": "board",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "um",
+              "elicitationRequired": false,
+              "type": "um",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "nomeBoard",
+              "elicitationRequired": true,
+              "type": "AMAZON.AlphaNumeric",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1395277511454.109328776566"
+              }
+            }
+          ],
+          "name": "CriarBoardIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "board",
+              "type": "board"
+            },
+            {
+              "name": "um",
+              "type": "um"
+            },
+            {
+              "name": "nomeBoard",
+              "type": "AMAZON.AlphaNumeric",
+              "samples": [
+                "o nome deve ser {nomeBoard}"
+              ]
+            }
+          ],
+          "name": "CriarBoardIntent",
+          "samples": [
+            "criar {um} novo {board} {nomeBoard}",
+            "criar {board} {nomeBoard}",
+            "criar {um} {board} {nomeBoard}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "quadro trello"
+              }
+            },
+            {
+              "name": {
+                "value": "quadro"
+              }
+            },
+            {
+              "name": {
+                "value": "board trello"
+              }
+            },
+            {
+              "name": {
+                "value": "board"
+              }
+            }
+          ],
+          "name": "board"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "uma"
+              }
+            },
+            {
+              "name": {
+                "value": "um"
+              }
+            }
+          ],
+          "name": "um"
+        }
+      ],
+      "invocationName": "integração trello"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual nome você quer dar ao novo quadro que será criado?"
+          }
+        ],
+        "id": "Elicit.Slot.1395277511454.109328776566"
+      }
+    ]
+  }
+}
